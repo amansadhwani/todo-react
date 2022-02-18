@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//import './style.css';
+import Todo from './Todo';
 
-function App() {
+export default function App() {
+  const [count, setCount] = React.useState(0);
+  const array = new Array(100).fill(2);
+  // const reducedValue = array.reduce((a, b) => {
+  //   debugger;
+  //   console.log('computed again')
+  //   return a + b;
+  // })
+  const reducedValue = React.useMemo(() => array.reduce((a,b) =>{
+    debugger;
+    console.log('computed again') 
+    return a + b;}),
+     [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{count}</h1>
+      <p> {reducedValue} </p>
+      <button type="button" onClick={() => setCount(count + 1)}>
+        Increase countt
+      </button>
+
+      <Todo/>
     </div>
   );
 }
-
-export default App;
