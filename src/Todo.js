@@ -37,7 +37,7 @@ const Todo = () => {
                 <br />
                 total items {listTodo.length}
                 <br />
-                total completed items {reducedValue}
+                total completed itemss {reducedValue}
 
                 <ul>
                     {listTodo.map((item, index) => (
