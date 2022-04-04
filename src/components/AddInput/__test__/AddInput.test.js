@@ -24,7 +24,7 @@ describe('tests', () => {
         const inputElement = screen.getByPlaceholderText("Add a new task here...");
         const btnElement = screen.getByRole("button",{name:/Add/i});
         fireEvent.change(inputElement, { target: { value: 'add new todo' } })
-        fireEvent.click(btnElement)
+        fireEvent.click(btnElement);
         expect(inputElement.value).toBe('');
     });
 
