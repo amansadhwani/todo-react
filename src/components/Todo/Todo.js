@@ -11,11 +11,11 @@ function Todo() {
     return (
         <div className="todo">
             <Header title="Todo" />
-            <AddInput 
+            <AddInput
                 setTodos={setTodos}
                 todos={todos}
             />
-            <TodoList 
+            <TodoList
                 todos={todos}
                 setTodos={setTodos}
             />

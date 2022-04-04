@@ -10,18 +10,18 @@ function AddInput({
     const [todo, setTodo] = useState("")
 
     const addTodo = () => {
-        if (todo){
-            let updatedTodos = [
-                ...todos,
-                {
-                    id: v4(),
-                    task: todo,
-                    completed: false
-                }
-            ]
+
+        let updatedTodos = [
+            ...todos,
+            {
+                id: v4(),
+                task: todo,
+                completed: false
+            }
+        ]
         setTodos(updatedTodos);
         setTodo("")
-        } 
+
     }
 
     return (
